@@ -7,23 +7,25 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
 	<body>
-		
-		<div id="slider">
-		    <img src="https://dummyimage.com/900x500/ddd/0000cc.jpg" class="slides" />
-		    <img src="https://dummyimage.com/900x500/ddd/cccc00.jpg" class="slides" />
-		    <img src="https://dummyimage.com/900x500/ddd/cc6600.jpg" class="slides" />
-		    <img src="https://dummyimage.com/900x500/ddd/0000cc.jpg" class="slides" />
-		    <img src="https://dummyimage.com/900x500/ddd/cccc00.jpg" class="slides" />
+		<div class="container">
+			<div id="slider" class="container">
+			    <img src="https://dummyimage.com/900x500/ddd/0000cc.jpg" class="slides" id="no1"/>
+			    <img src="https://dummyimage.com/900x500/ddd/cccc00.jpg" class="slides" id="no2" />
+			    <img src="https://dummyimage.com/900x500/ddd/cc6600.jpg" class="slides" id="no3" />
+			    <img src="https://dummyimage.com/900x500/ddd/0000cc.jpg" class="slides" id="no4" />
+			    <img src="https://dummyimage.com/900x500/ddd/cccc00.jpg" class="slides" id="no5" />
+			</div>
+			<ul class="indicators container">
+				<a href="#" class="previous"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+				<li class="indicator-item" id="point1"><a href="#no1"></a></li>
+				<li class="indicator-item" id="point2"><a href="#no2"></a></li>
+				<li class="indicator-item" id="point3"><a href="#no3"></a></li>
+				<li class="indicator-item" id="point4"><a href="#no4"></a></li>
+				<li class="indicator-item" id="point5"><a href="#no5"></a></li>
+				<a href="#" class="next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+			</ul>
 		</div>
-		<ul class="indicators container">
-			<a href="#" class="previous-next"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
-			<li class="indicator-item"></li>
-			<li class="indicator-item"></li>
-			<li class="indicator-item"></li>
-			<li class="indicator-item"></li>
-			<li class="indicator-item"></li>
-			<a href="#" class="previous-next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-		</ul>
+
 		<script src="js/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="js/app.js"></script>
 	</body>
