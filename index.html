@@ -3,17 +3,27 @@
 	<head>
 		<title>Carrousel</title>
 		<meta charset="utf-8">
+		<script src="https://use.fontawesome.com/75919d6994.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
 	<body>
 		
 		<div id="slider">
-		    <div><img src="https://dummyimage.com/900x500/ddd/0000cc.jpg"/></div>
-		    <div><img src="https://dummyimage.com/900x500/ddd/cccc00.jpg"/></div>
-		    <div><img src="https://dummyimage.com/900x500/ddd/cc6600.jpg"/></div>
-		    <div><img src="https://dummyimage.com/900x500/ddd/0000cc.jpg"/></div>
-		    <div><img src="https://dummyimage.com/900x500/ddd/cccc00.jpg"/></div>
-		    <div><img src="https://dummyimage.com/900x500/ddd/cccc00.jpg"/></div>
+		    <img src="https://dummyimage.com/900x500/ddd/0000cc.jpg" class="slides" />
+		    <img src="https://dummyimage.com/900x500/ddd/cccc00.jpg" class="slides" />
+		    <img src="https://dummyimage.com/900x500/ddd/cc6600.jpg" class="slides" />
+		    <img src="https://dummyimage.com/900x500/ddd/0000cc.jpg" class="slides" />
+		    <img src="https://dummyimage.com/900x500/ddd/cccc00.jpg" class="slides" />
 		</div>
+		<ul class="indicators container">
+			<a href="#" class="previous-next"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
+			<li class="indicator-item"></li>
+			<li class="indicator-item"></li>
+			<li class="indicator-item"></li>
+			<li class="indicator-item"></li>
+			<li class="indicator-item"></li>
+			<a href="#" class="previous-next"><i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+		</ul>
 		<script src="js/jquery-3.2.1.min.js"></script>
 		<script type="text/javascript" src="js/app.js"></script>
 	</body>
