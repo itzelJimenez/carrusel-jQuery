@@ -1,46 +1,16 @@
-$(document).ready(function(){
-	$('.slides').hide();
-	$('#no1').show();
-	$('#point1').css("background-color", "gray");
-	
-	$('#point1').click(function(){
-		$('#no1').fadeIn("slow");
-		$('#point1').css("background-color", "gray");
-	});
+var cargarPagina = function(){
+	var botones = document.querySelectorAll(".control");
+	botones.forEach(function(boton){
+		boton.addEventListener("click", cambiarImagen)
+	})
+}
 
-	$('#point2').click(function(){
-		$('.slides').hide();
-		$('#no2').fadeIn("slow");
-		$('.indicador-item').css('background-color', '#fff');
-		$('#point2').css("background-color", "gray");
-	});
+var cambiarImagen = function(){
+	var target=this.dataset.target;
+	var lastSlide=document.querySelector("div.active")
+	var slide  = document.querySelector("div[data-slide='" + target + "' ]");
+	lastSlide.classList.remove("active");
+	slide.classList.add("active");
+}
 
-	$('#point3').click(function(){
-		$('.slides').hide();
-		$('#no3').fadeIn("slow");
-		$('.indicador-item').css('background-color', '#fff');
-		$('#point3').css("background-color", "gray");
-	});
-
-	$('#point4').click(function(){
-		$('.slides').hide();
-		$('#no4').fadeIn("slow");
-		$('.indicador-item').css('background-color', '#fff');
-		$('#point4').css("background-color", "gray");
-	});
-
-	$('#point5').click(function(){
-		$('.slides').hide();
-		$('#no5').fadeIn("slow");
-		$('.indicador-item').css('background-color', '#fff');
-		$('#point5').css("background-color", "gray");
-	});
-
-	$('.previous').click(function(){
-		$("li").prev().show();
-	});
-
-	$('.next').click(function(){
-		alert("washu")
-	});
-});
+window.addEventListener("load", cargarPagina);
