@@ -1,46 +1,38 @@
-$(document).ready(function(){
-	$('.slides').hide();
-	$('#no1').show();
-	$('#point1').css("background-color", "gray");
-	
-	$('#point1').click(function(){
-		$('#no1').fadeIn("slow");
-		$('#point1').css("background-color", "gray");
-	});
+var target=0;
+var cargarPagina = function(){
+	//elementos
+	var botones = document.querySelectorAll(".control");
+	botones.forEach(function(boton){
+		boton.addEventListener("click", cambiarImagen)
+	})
+	var anterior=document.querySelector(".previous");
+	var siguiente=document.querySelector(".next");
+	anterior.addEventListener("click", anteriorImagen);
+	siguiente.addEventListener("click", siguienteImagen);
+}
 
-	$('#point2').click(function(){
-		$('.slides').hide();
-		$('#no2').fadeIn("slow");
-		$('.indicador-item').css('background-color', '#fff');
-		$('#point2').css("background-color", "gray");
-	});
+var cambiarImagen = function(){
+    target=parseInt(this.dataset.target);
+	mostrarImagen(target);
+}
 
-	$('#point3').click(function(){
-		$('.slides').hide();
-		$('#no3').fadeIn("slow");
-		$('.indicador-item').css('background-color', '#fff');
-		$('#point3').css("background-color", "gray");
-	});
+var mostrarImagen=function(target){
+	var lastSlide=document.querySelector("div.active")
+	var slide  = document.querySelector("div[data-slide='" + target + "' ]");
+	lastSlide.classList.remove("active");
+	slide.classList.add("active");
+}
 
-	$('#point4').click(function(){
-		$('.slides').hide();
-		$('#no4').fadeIn("slow");
-		$('.indicador-item').css('background-color', '#fff');
-		$('#point4').css("background-color", "gray");
-	});
-
-	$('#point5').click(function(){
-		$('.slides').hide();
-		$('#no5').fadeIn("slow");
-		$('.indicador-item').css('background-color', '#fff');
-		$('#point5').css("background-color", "gray");
-	});
-
-	$('.previous').click(function(){
-		$("li").prev().show();
-	});
-
-	$('.next').click(function(){
-		alert("washu")
-	});
-});
+var anteriorImagen=function(e){
+	e.preventDefault();
+	target=target-1;
+	target=(target<0)?3:target--;
+	mostrarImagen(target);
+};
+var siguienteImagen=function(e){
+	e.preventDefault();
+	target=target+1;
+	target=(target>3)?0:target++;
+	mostrarImagen(target);
+};
+window.addEventListener("load", cargarPagina);
