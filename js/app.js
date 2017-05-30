@@ -1,38 +1,40 @@
-var target=0;
+var target = 0;
 var cargarPagina = function(){
-	//elementos
-	var botones = document.querySelectorAll(".control");
-	botones.forEach(function(boton){
-		boton.addEventListener("click", cambiarImagen)
-	})
-	var anterior=document.querySelector(".previous");
-	var siguiente=document.querySelector(".next");
-	anterior.addEventListener("click", anteriorImagen);
-	siguiente.addEventListener("click", siguienteImagen);
-}
+	var $botones = $(".control");
+	var $anterior = $(".previous");
+	var $siguiente = $(".next");
+	$botones.click(cambiarImagen);
+	$anterior.click(imagenAnterior);
+	$siguiente.click(imagenSiguiente);
+
+};
 
 var cambiarImagen = function(){
-    target=parseInt(this.dataset.target);
+	target=($(this).data("target"));
+	console.log(target);
 	mostrarImagen(target);
-}
+};
 
-var mostrarImagen=function(target){
-	var lastSlide=document.querySelector("div.active")
-	var slide  = document.querySelector("div[data-slide='" + target + "' ]");
-	lastSlide.classList.remove("active");
-	slide.classList.add("active");
-}
+var mostrarImagen = function(){
+	var $lastSlide= $("div.active");
+	var $slide = $("div[data-slide='" + target + "' ]");
+	$lastSlide.removeClass("active");
+	$slide.addClass("active");
+};
 
-var anteriorImagen=function(e){
+var imagenAnterior=function(e){
 	e.preventDefault();
 	target=target-1;
 	target=(target<0)?3:target--;
 	mostrarImagen(target);
 };
-var siguienteImagen=function(e){
+
+var imagenSiguiente = function(e){
 	e.preventDefault();
 	target=target+1;
 	target=(target>3)?0:target++;
 	mostrarImagen(target);
 };
-window.addEventListener("load", cargarPagina);
+
+
+$(document).ready(cargarPagina);
